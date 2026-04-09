@@ -1,0 +1,104 @@
+:root {
+  --ac-accent: #7c3aed;
+  --ac-accent-soft: #f3e8ff;
+  --ac-ink: #18212f;
+  --ac-muted: #5f6b7b;
+}
+
+body {
+  color: var(--ac-ink);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.navbar {
+  backdrop-filter: saturate(180%) blur(6px);
+}
+
+.navbar-brand {
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+
+.page-wrap {
+  min-height: calc(100vh - 64px);
+}
+
+.hero-shell {
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(124, 58, 237, 0.12), transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(14, 165, 233, 0.14), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(124, 58, 237, 0.14);
+  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.08);
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.soft-card {
+  border: 1px solid #e9eef5;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  color: var(--ac-muted);
+}
+
+.ac-btn {
+  --bs-btn-bg: var(--ac-accent);
+  --bs-btn-border-color: var(--ac-accent);
+  --bs-btn-hover-bg: #6d28d9;
+  --bs-btn-hover-border-color: #6d28d9;
+  --bs-btn-active-bg: #6d28d9;
+  --bs-btn-active-border-color: #6d28d9;
+  --bs-btn-color: #fff;
+}
+
+.badge-soft {
+  background: var(--ac-accent-soft);
+  color: #4c1d95;
+  border: 1px solid rgba(124, 58, 237, 0.16);
+}
+
+.profile-placeholder,
+.product-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.85rem;
+  background: linear-gradient(135deg, #ede9fe, #eef2ff);
+}
+
+.list-clean {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.list-clean li {
+  margin-bottom: 0.5rem;
+  color: var(--ac-muted);
+}
+
+.filter-shell {
+  border: 1px solid #e8edf5;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+footer {
+  border-top: 1px solid #e7ebf3;
+}
+
+@media (max-width: 767px) {
+  .hero-shell {
+    padding: 1.5rem !important;
+  }
+}
