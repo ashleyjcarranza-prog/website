@@ -1,0 +1,41 @@
+{
+  "timezone": "PST",
+  "events": [
+    {
+      "id": "evt-upcoming-001",
+      "type": "upcoming_conference",
+      "date": "2026-06-18",
+      "time": "10:00 AM PST",
+      "city": "Los Angeles, CA",
+      "venue": "Placeholder Convention Center",
+      "venueAddress": "123 Main St, Los Angeles, CA",
+      "venueMapUrl": "https://maps.google.com/?q=123+Main+St+Los+Angeles+CA",
+      "talkTitle": "Placeholder Talk Title",
+      "topic": "Education"
+    },
+    {
+      "id": "evt-speaking-001",
+      "type": "speaking_engagement",
+      "date": "2026-08-10",
+      "time": "1:30 PM PST",
+      "city": "San Diego, CA",
+      "venue": "Placeholder High School",
+      "venueAddress": "500 School Rd, San Diego, CA",
+      "venueMapUrl": "https://maps.google.com/?q=500+School+Rd+San+Diego+CA",
+      "talkTitle": "Empowering Learners",
+      "topic": "Student Growth"
+    },
+    {
+      "id": "evt-past-001",
+      "type": "past_appearance",
+      "date": "2025-11-03",
+      "time": "9:00 AM PST",
+      "city": "Phoenix, AZ",
+      "venue": "Placeholder Education Summit",
+      "venueAddress": "88 Summit Blvd, Phoenix, AZ",
+      "venueMapUrl": "https://maps.google.com/?q=88+Summit+Blvd+Phoenix+AZ",
+      "talkTitle": "Building Confidence in Young Readers",
+      "topic": "Literacy"
+    }
+  ]
+}
