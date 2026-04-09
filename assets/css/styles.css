@@ -42,6 +42,12 @@ body {
   border: 1px solid #e9eef5;
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.1);
 }
 
 .kicker {

@@ -22,9 +22,9 @@ function toGoogleCalendarUrl(event) {
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
-function eventCard(event) {
+function eventCard(event, index) {
   return `
-    <div class="col-lg-6">
+    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="${Math.min(index * 60, 240)}">
       <article class="soft-card bg-white p-3 h-100">
         <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
           <h2 class="h5 mb-0">${event.talkTitle}</h2>
@@ -84,8 +84,10 @@ async function loadEvents() {
       });
 
       root.innerHTML = filtered.length
-        ? filtered.map(eventCard).join('')
+        ? filtered.map((event, index) => eventCard(event, index)).join('')
         : '<p class="text-secondary">No events match your filters right now.</p>';
+
+      if (window.AOS) window.AOS.refresh();
     };
 
     ['filter-type', 'filter-topic', 'filter-year', 'filter-city'].forEach((id) => {

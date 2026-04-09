@@ -45,6 +45,16 @@ function buildFooter() {
   `;
 }
 
+function initAnimations() {
+  if (window.AOS) {
+    window.AOS.init({
+      once: true,
+      duration: 650,
+      easing: 'ease-out-cubic'
+    });
+  }
+}
+
 async function getJson(path) {
   const response = await fetch(path, { cache: 'no-cache' });
   if (!response.ok) throw new Error(`Failed to fetch ${path}`);
@@ -54,4 +64,5 @@ async function getJson(path) {
 document.addEventListener('DOMContentLoaded', () => {
   buildNav();
   buildFooter();
+  initAnimations();
 });
