@@ -22,8 +22,23 @@ function renderPostCard(post, index = 0) {
     </div>`;
 }
 
+function buildPostSchema(post) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    datePublished: post.date,
+    author: { '@type': 'Person', name: 'Ashley Jae Carranza' },
+    publisher: { '@type': 'Person', name: 'Ashley Jae Carranza' },
+    description: post.excerpt || '',
+    mainEntityOfPage: `https://ashleycarranza.com/news/?post=${post.id}`
+  };
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
 function renderSinglePost(post) {
   return `
+    ${buildPostSchema(post)}
     <article class="single-post" data-aos="fade-up">
       <a class="btn-outline btn-sm mb-4 d-inline-block" href="${withBasePath('/news/')}"><i class="bi bi-arrow-left me-1"></i>All posts</a>
       <p class="event-date mb-2"><i class="bi bi-calendar3 me-1"></i>${escapeHtml(getPostDateLabel(post))}</p>

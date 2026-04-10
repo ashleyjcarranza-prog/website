@@ -2,7 +2,7 @@
   --bg: #FAFAF8;
   --surface: #FFFFFF;
   --ink: #1A1A1A;
-  --secondary: #6B6B6B;
+  --secondary: #595959;
   --accent: #2D5016;
   --accent-hover: #1E3A0F;
   --accent-light: #E8F0E4;
@@ -91,6 +91,32 @@ a:hover {
   height: 2px;
   border-radius: 1px;
   background: var(--accent);
+}
+
+/* ── Breadcrumb ── */
+
+.breadcrumb-nav {
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-nav .breadcrumb {
+  font-size: 0.85rem;
+  background: none;
+  padding: 0;
+}
+
+.breadcrumb-nav .breadcrumb-item a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.breadcrumb-nav .breadcrumb-item a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb-nav .breadcrumb-item.active {
+  color: var(--ink);
 }
 
 /* ── Layout ── */
@@ -628,5 +654,81 @@ footer {
 
   .testimonial-slide {
     padding: 0.5rem 1rem;
+  }
+}
+
+/* ── Scroll reveal (replaces AOS) ── */
+
+[data-aos].aos-init {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-aos="fade-up"].aos-init {
+  transform: translateY(20px);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Dark mode ── */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A1A1A;
+    --surface: #242424;
+    --ink: #E8E8E8;
+    --secondary: #A0A0A0;
+    --accent: #5A9E35;
+    --accent-hover: #6DB844;
+    --accent-light: #1E2E15;
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .skip-link {
+    background: #fff;
+    color: #1A1A1A;
+  }
+
+  .badge-featured {
+    color: #d4a017;
+    background: #3a2f00;
+  }
+
+  .empty-state {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .skeleton-line,
+  .skeleton-img {
+    background: linear-gradient(90deg, var(--accent-light) 25%, #2a2a2a 50%, var(--accent-light) 75%);
+    background-size: 200% 100%;
+  }
+
+  .testimonial-carousel .carousel-control-prev-icon,
+  .testimonial-carousel .carousel-control-next-icon {
+    filter: invert(0.8);
+  }
+
+  .form-select,
+  .form-control {
+    background-color: var(--surface);
+    border-color: var(--border);
+    color: var(--ink);
+  }
+
+  img {
+    opacity: 0.9;
   }
 }

@@ -1,5 +1,5 @@
 import { getSiteData } from './core/site.js';
-import { buildFooter, buildNav, initAnimations } from './core/ui.js';
+import { buildBreadcrumb, buildFooter, buildNav, initAnimations, injectBreadcrumbSchema } from './core/ui.js';
 import { initAboutPage } from './pages/about.js';
 import { initEventsPage } from './pages/events.js';
 import { initHomePage } from './pages/home.js';
@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   buildNav(site);
   buildFooter(site);
   initAnimations();
+  injectBreadcrumbSchema();
+  buildBreadcrumb();
 
   const pageName = document.body.dataset.page;
   const initializePage = pageInitializers[pageName];

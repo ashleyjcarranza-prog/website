@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ashley Jae Carranza</title>
+    <link>https://ashleycarranza.com</link>
+    <description>News, features, and writing updates from Ashley Jae Carranza.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://ashleycarranza.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Feature Interview: Our Fears Made Manifest</title>
+      <link>https://ashleycarranza.com/news/?post=post-001</link>
+      <guid>https://ashleycarranza.com/news/?post=post-001</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Features</category>
+      <description>When my collection Our Fears Made Manifest came out, I did a feature interview with Awesome Gang about the book and the ideas behind it.</description>
+    </item>
+    <item>
+      <title>Current Project: A Boy Named Doctor</title>
+      <link>https://ashleycarranza.com/news/?post=post-002</link>
+      <guid>https://ashleycarranza.com/news/?post=post-002</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Writing Life</category>
+      <description>I'm currently working toward my MFA in creative writing and completing A Boy Named Doctor, a coming-of-age novel set in the California desert.</description>
+    </item>
+  </channel>
+</rss>

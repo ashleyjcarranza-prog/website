@@ -1,4 +1,5 @@
 import { escapeHtml, safeHref } from './format.js';
+import { initScrollReveal, refreshScrollReveal } from './scroll-reveal.js';
 import { getNavigation, normalizePath, stripBasePath, withBasePath } from './site.js';
 
 function socialEntries(site) {
@@ -73,18 +74,65 @@ export function buildFooter(site = {}) {
   `;
 }
 
+export function buildBreadcrumb() {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (path === '/' || path === '') return;
+
+  const labels = {
+    '/about': 'About',
+    '/contact': 'Contact',
+    '/my-work': 'My Work',
+    '/news': 'News',
+    '/speaking-features': 'Speaking & Features'
+  };
+  const label = labels[path];
+  if (!label) return;
+
+  const main = document.getElementById('main-content');
+  if (!main) return;
+
+  const nav = document.createElement('nav');
+  nav.setAttribute('aria-label', 'Breadcrumb');
+  nav.className = 'breadcrumb-nav';
+  nav.innerHTML = `<ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item"><a href="${withBasePath('/')}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">${escapeHtml(label)}</li>
+  </ol>`;
+  main.insertBefore(nav, main.firstChild);
+}
+
+export function injectBreadcrumbSchema() {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (path === '/' || path === '') return;
+
+  const labels = {
+    '/about': 'About',
+    '/contact': 'Contact',
+    '/my-work': 'My Work',
+    '/news': 'News',
+    '/speaking-features': 'Speaking & Features'
+  };
+  const label = labels[path];
+  if (!label) return;
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ashleycarranza.com/' },
+      { '@type': 'ListItem', position: 2, name: label, item: `https://ashleycarranza.com${path}` }
+    ]
+  };
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
+
 export function initAnimations() {
-  if (window.AOS) {
-    window.AOS.init({
-      once: true,
-      duration: 500,
-      easing: 'ease-out-cubic'
-    });
-  }
+  initScrollReveal();
 }
 
 export function refreshAnimations() {
-  if (window.AOS) {
-    window.AOS.refresh();
-  }
+  refreshScrollReveal();
 }

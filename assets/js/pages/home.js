@@ -144,10 +144,10 @@ export async function initHomePage(site = {}) {
           <h2 class="section-title mb-3" data-aos="fade-up">What People Are Saying</h2>
           ${renderTestimonialCarousel(featured)}`;
       } else {
-        testimonialRoot.innerHTML = '';
+        testimonialRoot.style.display = 'none';
       }
     } else {
-      testimonialRoot.innerHTML = '';
+      testimonialRoot.style.display = 'none';
     }
   }
 
