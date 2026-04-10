@@ -322,12 +322,12 @@ a:hover {
 .product-placeholder {
   display: block;
   width: 100%;
-  object-fit: cover;
   border-radius: 0.5rem;
   background: var(--accent-light);
 }
 
 .profile-placeholder {
+  object-fit: cover;
   aspect-ratio: 4 / 5;
 }
 
@@ -336,7 +336,8 @@ a:hover {
 }
 
 .product-placeholder {
-  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  aspect-ratio: 3 / 4;
 }
 
 .preview-card .product-placeholder {
