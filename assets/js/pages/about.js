@@ -113,7 +113,7 @@ function renderTopics(topics) {
 
   return `
     <h2 class="section-title mb-3" data-aos="fade-up">What I Speak About</h2>
-    <p class="text-muted-ui section-copy mb-4" data-aos="fade-up">Ashley speaks at conferences, schools, and community events on topics close to her heart.</p>
+    <p class="text-muted-ui section-copy mb-4" data-aos="fade-up">I speak at conferences, schools, and community events on topics I care about.</p>
     <div class="row g-4" data-aos="fade-up">${cards}</div>`;
 }
 

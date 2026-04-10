@@ -12,7 +12,7 @@
   "home": {
     "heroEyebrow": "Writer • Educator • Creator",
     "heroHeading": "Ashley Jae Carranza",
-    "heroSubheading": "Ashley is a writer, educator, and creator based in Las Vegas. She teaches high school and college writing, including courses in the prison system, and is currently completing her MFA in creative writing while working on her novel A Boy Named Doctor.",
+    "heroSubheading": "I'm a writer, educator, and creator based in Las Vegas. I teach both high school and college writing, including courses in the prison system. That work, along with my own life, has shaped how I think about storytelling, voice, and transformation.",
     "heroImage": "/assets/img/headshot.webp",
     "heroImageAlt": "Ashley Jae Carranza smiling in a headshot portrait",
     "heroDetails": [
@@ -31,7 +31,7 @@
       { "label": "Google Scholar", "href": "https://scholar.google.com/citations?user=BeOttpYAAAAJ&hl=en", "icon": "bi-mortarboard", "style": "outline" }
     ],
     "quickNav": [
-      { "title": "About", "description": "Learn about Ashley's teaching, editing, scholarship, and current creative work.", "href": "/about/", "linkText": "Read bio" },
+      { "title": "About", "description": "Learn about my teaching, editing, scholarship, and current creative work.", "href": "/about/", "linkText": "Read bio" },
       { "title": "My Work", "description": "Browse books, academic publications, creative works, and classroom-ready resources.", "href": "/my-work/", "linkText": "Explore work" },
       { "title": "Speaking & Features", "description": "See conference panels, presentations, and selected public-facing features.", "href": "/speaking-features/", "linkText": "View engagements" }
     ],

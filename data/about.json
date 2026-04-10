@@ -4,15 +4,15 @@
   "portrait": "/assets/img/headshot.webp",
   "location": "Las Vegas, NV",
   "bio": [
-    "Ashley is a writer, educator, and creator based in Las Vegas. She teaches both high school and college writing, including courses in the prison system. That work, along with her own life, shapes how she thinks about storytelling, voice, and transformation.",
-    "She is currently working toward her MFA in creative writing and completing her novel A Boy Named Doctor."
+    "I'm a writer, educator, and creator based in Las Vegas. I teach both high school and college writing, including courses in the prison system. That work, along with my own life, has shaped how I think about storytelling, voice, and transformation.",
+    "I'm currently working toward my MFA in creative writing and completing my novel A Boy Named Doctor."
   ],
   "secondaryImage": "/assets/img/chill.webp",
   "secondaryImageAlt": "Ashley Jae Carranza reading beside a bookshelf",
   "currentWork": {
     "eyebrow": "Current Work",
     "heading": "Writing from lived experience",
-    "description": "Ashley is currently completing A Boy Named Doctor, a coming-of-age novel set in the California desert following a young boy navigating loss, identity, and survival. Through raw experiences and shifting relationships, he begins to understand who he is and who he might become."
+    "description": "I'm currently completing A Boy Named Doctor, a coming-of-age novel set in the California desert following a young boy navigating loss, identity, and survival. Through raw experiences and shifting relationships, he begins to understand who he is and who he might become."
   },
   "editingExperience": [
     "PopMeC Research Blog — Peer Reviewer for horror, popular culture, American film, and Stephen King studies",
@@ -53,12 +53,12 @@
     },
     {
       "title": "Popular Culture, Horror, and Film Studies",
-      "description": "Conference-ready conversations rooted in Ashley's research, criticism, and editorial work."
+      "description": "Conference-ready conversations rooted in my research, criticism, and editorial work."
     }
   ],
   "cta": {
-    "heading": "Connect with Ashley",
-    "description": "Available for speaking engagements, panels, teaching conversations, and feature opportunities.",
+    "heading": "Let's connect",
+    "description": "I'm available for speaking engagements, panels, teaching conversations, and feature opportunities.",
     "linkText": "Start the conversation",
     "linkHref": "/contact/"
   }
