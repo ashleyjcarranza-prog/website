@@ -25,9 +25,14 @@ export function buildNav(site = {}) {
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container py-1">
         <a class="navbar-brand" href="${withBasePath('/')}">${brand}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex align-items-center order-lg-last gap-2">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="bi bi-moon-fill"></i><i class="bi bi-sun-fill"></i>
+          </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             ${itemsMarkup}
@@ -36,6 +41,14 @@ export function buildNav(site = {}) {
       </div>
     </nav>
   `;
+
+  const toggleBtn = nav.querySelector('.theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
 
   const currentPath = normalizePath(stripBasePath(window.location.pathname));
   nav.querySelectorAll('.nav-link').forEach((link) => {
