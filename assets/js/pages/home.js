@@ -34,7 +34,7 @@ function renderHero(home) {
         <div class="d-flex flex-wrap gap-2">${ctas}</div>
       </div>
       <div class="col-lg-5 text-center" data-aos="fade-up" data-aos-delay="100">
-        <img class="hero-portrait mx-auto" src="${image}" alt="${imageAlt}" loading="lazy" />
+        <img class="hero-portrait mx-auto" src="${image}" alt="${imageAlt}" loading="lazy" onerror="this.onerror=null;this.src='${withBasePath('/assets/img/ashley-portrait.svg')}';" />
       </div>
     </div>`;
 }

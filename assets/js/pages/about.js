@@ -14,7 +14,7 @@ function renderBio(data) {
   return `
     <div class="row g-5 align-items-start mb-5">
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
-        <img class="profile-placeholder w-100" src="${escapeHtml(portrait)}" alt="Ashley Jae Carranza" loading="lazy" />
+        <img class="profile-placeholder w-100" src="${escapeHtml(portrait)}" alt="Ashley Jae Carranza" loading="lazy" onerror="this.onerror=null;this.src='${withBasePath('/assets/img/ashley-portrait.svg')}';" />
       </div>
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="120">
         ${tagline}
