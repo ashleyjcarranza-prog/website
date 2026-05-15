@@ -137,20 +137,9 @@ export async function initHomePage(site = {}) {
     proofRoot.innerHTML = renderSocialProof(productCount, eventCount, home.proofItems || []);
   }
 
-  // Testimonials
+  // Testimonials removed from homepage
   if (testimonialRoot) {
-    if (testimonialsResult.status === 'fulfilled') {
-      const featured = (testimonialsResult.value.testimonials || []).filter((t) => t.featured);
-      if (featured.length) {
-        testimonialRoot.innerHTML = `
-          <h2 class="section-title mb-3" data-aos="fade-up">What People Are Saying</h2>
-          ${renderTestimonialCarousel(featured)}`;
-      } else {
-        testimonialRoot.style.display = 'none';
-      }
-    } else {
-      testimonialRoot.style.display = 'none';
-    }
+    testimonialRoot.style.display = 'none';
   }
 
   // News
