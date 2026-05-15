@@ -3,7 +3,6 @@ import { escapeHtml } from '../core/format.js';
 import { initProductModals } from '../core/product-modal.js';
 import { getJson, withBasePath } from '../core/site.js';
 import { renderSkeleton } from '../core/skeleton.js';
-import { renderTestimonialCarousel } from '../core/testimonials.js';
 import { refreshAnimations } from '../core/ui.js';
 
 function renderHero(home) {
@@ -75,7 +74,6 @@ export async function initHomePage(site = {}) {
   const navRoot = document.getElementById('quick-nav');
   const workRoot = document.getElementById('home-work-preview');
   const eventRoot = document.getElementById('home-events-preview');
-  const testimonialRoot = document.getElementById('home-testimonials');
   const newsRoot = document.getElementById('home-news');
 
   const home = site.home || {};
@@ -90,14 +88,12 @@ export async function initHomePage(site = {}) {
   // Show skeletons
   if (workRoot) workRoot.innerHTML = renderSkeleton('product-preview', featuredProducts);
   if (eventRoot) eventRoot.innerHTML = renderSkeleton('event-preview', featuredEvents);
-  if (testimonialRoot) testimonialRoot.innerHTML = renderSkeleton('testimonial', 1);
   if (newsRoot) newsRoot.innerHTML = renderSkeleton('post-preview', featuredPosts);
 
   // Fetch all data in parallel
-  const [productsResult, eventsResult, testimonialsResult, postsResult] = await Promise.allSettled([
+  const [productsResult, eventsResult, postsResult] = await Promise.allSettled([
     getJson('/data/products.json'),
     getJson('/data/events.json'),
-    getJson('/data/testimonials.json'),
     getJson('/data/posts.json')
   ]);
 
@@ -137,21 +133,6 @@ export async function initHomePage(site = {}) {
     proofRoot.innerHTML = renderSocialProof(productCount, eventCount, home.proofItems || []);
   }
 
-  // Testimonials
-  if (testimonialRoot) {
-    if (testimonialsResult.status === 'fulfilled') {
-      const featured = (testimonialsResult.value.testimonials || []).filter((t) => t.featured);
-      if (featured.length) {
-        testimonialRoot.innerHTML = `
-          <h2 class="section-title mb-3" data-aos="fade-up">What People Are Saying</h2>
-          ${renderTestimonialCarousel(featured)}`;
-      } else {
-        testimonialRoot.style.display = 'none';
-      }
-    } else {
-      testimonialRoot.style.display = 'none';
-    }
-  }
 
   // News
   if (newsRoot) {
